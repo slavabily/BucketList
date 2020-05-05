@@ -19,8 +19,11 @@ struct User: Identifiable, Comparable {
 }
 
 struct ContentView: View {
-//    let values = [1, 5, 3, 6, 2, 9].sorted()
-    
+    func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+     }
+ 
     let users = [
         User(firstName: "Arnold", lastName: "Rimmer"),
         User(firstName: "Kristine", lastName: "Kochanski"),
@@ -28,8 +31,18 @@ struct ContentView: View {
         ].sorted()
     
     var body: some View {
-        List(users) { user in
-            Text("\(user.firstName), \(user.lastName)")
+        Text("Hello World")
+            .onTapGesture {
+                let str = "Test Message"
+                let url = self.getDocumentsDirectory().appendingPathComponent("message.txt")
+                
+                do {
+                    try str.write(to: url, atomically: true, encoding: .utf8)
+                    let input = try String(contentsOf: url)
+                    print(input)
+                } catch {
+                    print(error.localizedDescription)
+                }
         }
     }
 }
