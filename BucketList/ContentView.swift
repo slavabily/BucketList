@@ -8,41 +8,42 @@
 
 import SwiftUI
 
-struct User: Identifiable, Comparable {
-    let id = UUID()
-    let firstName: String
-    let lastName: String
-    
-    static func <(lhs: User, rhs: User) -> Bool {
-        lhs.lastName < rhs.lastName
+struct LoadingView: View {
+    var body: some View {
+        Text("Loading...")
+    }
+}
+
+struct SuccessView: View {
+    var body: some View {
+        Text("Success!")
+    }
+}
+
+struct FailedView: View {
+    var body: some View {
+        Text("Failed.")
     }
 }
 
 struct ContentView: View {
-    func getDocumentsDirectory() -> URL {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-        return paths[0]
-     }
- 
-    let users = [
-        User(firstName: "Arnold", lastName: "Rimmer"),
-        User(firstName: "Kristine", lastName: "Kochanski"),
-        User(firstName: "David", lastName: "Lister"),
-        ].sorted()
+    enum LoadingState {
+        case loading, success, failed
+    }
+    
+    var loadingState = LoadingState.loading
     
     var body: some View {
-        Text("Hello World")
-            .onTapGesture {
-                let str = "Test Message"
- 
-                // MARK:  test of FileManager
-                let fileManager = FileManager()
-                // recording to file
-                fileManager.record(string: str, fileName: "message.txt")
-                // reading from file
-                let input = fileManager.read(fileName: "message.txt")
-                print(input)
+        Group {
+            if loadingState == .loading {
+                LoadingView()
+            } else if loadingState == .success {
+                SuccessView()
+            } else if loadingState == .failed {
+                FailedView()
+            }
         }
+         
     }
 }
 
