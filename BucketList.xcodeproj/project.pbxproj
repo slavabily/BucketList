@@ -13,6 +13,7 @@
 		B90B33672461905B00A4E6EF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B90B33662461905B00A4E6EF /* Assets.xcassets */; };
 		B90B336A2461905B00A4E6EF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B90B33692461905B00A4E6EF /* Preview Assets.xcassets */; };
 		B90B336D2461905B00A4E6EF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B90B336B2461905B00A4E6EF /* LaunchScreen.storyboard */; };
+		B9519F182462A368003EB3B6 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9519F172462A368003EB3B6 /* FileManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B90B33692461905B00A4E6EF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B90B336C2461905B00A4E6EF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B90B336E2461905B00A4E6EF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9519F172462A368003EB3B6 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			children = (
 				B90B33602461905200A4E6EF /* AppDelegate.swift */,
 				B90B33622461905200A4E6EF /* SceneDelegate.swift */,
+				B9519F172462A368003EB3B6 /* FileManager.swift */,
 				B90B33642461905200A4E6EF /* ContentView.swift */,
 				B90B33662461905B00A4E6EF /* Assets.xcassets */,
 				B90B336B2461905B00A4E6EF /* LaunchScreen.storyboard */,
@@ -149,6 +152,7 @@
 				B90B33612461905200A4E6EF /* AppDelegate.swift in Sources */,
 				B90B33632461905200A4E6EF /* SceneDelegate.swift in Sources */,
 				B90B33652461905200A4E6EF /* ContentView.swift in Sources */,
+				B9519F182462A368003EB3B6 /* FileManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

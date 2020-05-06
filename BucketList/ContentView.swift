@@ -34,15 +34,14 @@ struct ContentView: View {
         Text("Hello World")
             .onTapGesture {
                 let str = "Test Message"
-                let url = self.getDocumentsDirectory().appendingPathComponent("message.txt")
-                
-                do {
-                    try str.write(to: url, atomically: true, encoding: .utf8)
-                    let input = try String(contentsOf: url)
-                    print(input)
-                } catch {
-                    print(error.localizedDescription)
-                }
+ 
+                // MARK:  test of FileManager
+                let fileManager = FileManager()
+                // recording to file
+                fileManager.record(string: str, fileName: "message.txt")
+                // reading from file
+                let input = fileManager.read(fileName: "message.txt")
+                print(input)
         }
     }
 }
