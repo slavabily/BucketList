@@ -11,6 +11,8 @@ import MapKit
 
 struct MapView: UIViewRepresentable {
     @Binding var centerCoordinate: CLLocationCoordinate2D
+    @Binding var selectedPlace: MKPointAnnotation?
+    @Binding var showingPlaceDetails: Bool
     
     var annotations: [MKPointAnnotation]
     
@@ -41,6 +43,33 @@ struct MapView: UIViewRepresentable {
         func mapViewDidChangeVisibleRegion(_ mapView: MKMapView) {
             parent.centerCoordinate = mapView.centerCoordinate
         }
+        
+        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+            // this is our unique identifier for view reuse
+            let identifier = "Placemark"
+            // attempt to find the cell we can recycle
+            var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+            if annotationView == nil {
+                // we don't find one; make new one
+                annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+                // alow this to show pop up information
+                annotationView?.canShowCallout = true
+                // attach the information button to the view
+                annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+            } else {
+                // we have a view to reuse, so give it a new annotation
+                annotationView?.annotation = annotation
+            }
+            // whether it's a new view or a recycled one, send it back
+            return annotationView
+        }
+        
+        func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+            guard let placeMark = view.annotation as? MKPointAnnotation else { return }
+            
+            parent.selectedPlace = placeMark
+            parent.showingPlaceDetails = true
+        }
     }
     
 }
@@ -58,6 +87,6 @@ extension MKPointAnnotation {
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView(centerCoordinate: .constant(MKPointAnnotation.example.coordinate), annotations: [MKPointAnnotation.example])
+        MapView(centerCoordinate: .constant(MKPointAnnotation.example.coordinate),selectedPlace: .constant(MKPointAnnotation.example), showingPlaceDetails: .constant(false), annotations: [MKPointAnnotation.example])
     }
 }
