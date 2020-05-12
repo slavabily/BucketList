@@ -18,6 +18,7 @@
 		B960947A2465939E00D0D3DA /* MKPointAnnotation-ObservableObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96094792465939E00D0D3DA /* MKPointAnnotation-ObservableObject.swift */; };
 		B960947C2465972800D0D3DA /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B960947B2465972800D0D3DA /* EditView.swift */; };
 		B96FCCD92465BE90006A2157 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = B96FCCD82465BE90006A2157 /* Result.swift */; };
+		B9A8046F2469613E00126DB1 /* Map+Circle+ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A8046E2469613E00126DB1 /* Map+Circle+ButtonView.swift */; };
 		B9EDCCD52466F08700600822 /* MKPointAnnotation-Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9EDCCD42466F08700600822 /* MKPointAnnotation-Codable.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		B96094792465939E00D0D3DA /* MKPointAnnotation-ObservableObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPointAnnotation-ObservableObject.swift"; sourceTree = "<group>"; };
 		B960947B2465972800D0D3DA /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		B96FCCD82465BE90006A2157 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		B9A8046E2469613E00126DB1 /* Map+Circle+ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Map+Circle+ButtonView.swift"; sourceTree = "<group>"; };
 		B9EDCCD42466F08700600822 /* MKPointAnnotation-Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MKPointAnnotation-Codable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,12 +73,13 @@
 				B90B33602461905200A4E6EF /* AppDelegate.swift */,
 				B90B33622461905200A4E6EF /* SceneDelegate.swift */,
 				B9519F172462A368003EB3B6 /* FileManager.swift */,
-				B9348B07246437E400A5C9DC /* MapView.swift */,
-				B96094792465939E00D0D3DA /* MKPointAnnotation-ObservableObject.swift */,
-				B960947B2465972800D0D3DA /* EditView.swift */,
 				B96FCCD82465BE90006A2157 /* Result.swift */,
+				B96094792465939E00D0D3DA /* MKPointAnnotation-ObservableObject.swift */,
 				B9EDCCD42466F08700600822 /* MKPointAnnotation-Codable.swift */,
 				B90B33642461905200A4E6EF /* ContentView.swift */,
+				B9348B07246437E400A5C9DC /* MapView.swift */,
+				B9A8046E2469613E00126DB1 /* Map+Circle+ButtonView.swift */,
+				B960947B2465972800D0D3DA /* EditView.swift */,
 				B90B33662461905B00A4E6EF /* Assets.xcassets */,
 				B90B336B2461905B00A4E6EF /* LaunchScreen.storyboard */,
 				B90B336E2461905B00A4E6EF /* Info.plist */,
@@ -171,6 +174,7 @@
 				B960947C2465972800D0D3DA /* EditView.swift in Sources */,
 				B90B33652461905200A4E6EF /* ContentView.swift in Sources */,
 				B9EDCCD52466F08700600822 /* MKPointAnnotation-Codable.swift in Sources */,
+				B9A8046F2469613E00126DB1 /* Map+Circle+ButtonView.swift in Sources */,
 				B96FCCD92465BE90006A2157 /* Result.swift in Sources */,
 				B9519F182462A368003EB3B6 /* FileManager.swift in Sources */,
 			);

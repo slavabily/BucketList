@@ -71,13 +71,12 @@ struct MapView: UIViewRepresentable {
             parent.showingPlaceDetails = true
         }
     }
-    
 }
 
 // for preview:
-extension MKPointAnnotation {
-    static var example: MKPointAnnotation {
-        let annotation = MKPointAnnotation()
+extension CodableMKPointAnnotation {
+    static var example: CodableMKPointAnnotation {
+        let annotation = CodableMKPointAnnotation()
         annotation.title = "London"
         annotation.subtitle = "Home to 2012 Summer Olimpics."
         annotation.coordinate = CLLocationCoordinate2D(latitude: 51.5, longitude: -0.13)
@@ -87,6 +86,6 @@ extension MKPointAnnotation {
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView(centerCoordinate: .constant(MKPointAnnotation.example.coordinate),selectedPlace: .constant(MKPointAnnotation.example), showingPlaceDetails: .constant(false), annotations: [MKPointAnnotation.example])
+        MapView(centerCoordinate: .constant(CodableMKPointAnnotation.example.coordinate),selectedPlace: .constant(CodableMKPointAnnotation.example), showingPlaceDetails: .constant(false), annotations: [CodableMKPointAnnotation.example])
     }
 }

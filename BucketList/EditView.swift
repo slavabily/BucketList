@@ -80,6 +80,6 @@ struct EditView: View {
 
 struct EditView_Previews: PreviewProvider {
     static var previews: some View {
-        EditView(placemark: MKPointAnnotation.example)
+        EditView(placemark: CodableMKPointAnnotation.example)
     }
 }

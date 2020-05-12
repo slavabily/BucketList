@@ -21,36 +21,7 @@ struct ContentView: View {
     var body: some View {
         ZStack {
             if isUnlocked {
-                MapView(centerCoordinate: $centerCoordinate, selectedPlace: $selectedPlace, showingPlaceDetails: $showingPlaceDetails, annotations: locations)
-                    .edgesIgnoringSafeArea(.all)
-                Circle()
-                    .fill(Color.blue)
-                    .opacity(0.3)
-                    .frame(width: 32, height: 32)
-                
-                VStack {
-                    Spacer()
-                    HStack {
-                        Spacer()
-                        Button(action: {
-                            let newLocation = CodableMKPointAnnotation()
-                            newLocation.coordinate = self.centerCoordinate
-                            newLocation.title = "Example location"
-                            self.locations.append(newLocation)
-                            self.selectedPlace = newLocation
-                            self.showingEditScreen = true
-                        }) {
-                            Image(systemName: "plus")
-                        }
-                        .padding()
-                        .background(Color.black.opacity(0.75))
-                        .foregroundColor(.white)
-                        .font(.title)
-                        .clipShape(Circle())
-                        .padding(.trailing)
-                        
-                    }
-                }
+                Map_Circle_ButtonView(centerCoordinate: $centerCoordinate, selectedPlace: $selectedPlace, showingPlaceDetails: $showingPlaceDetails, showingEditScreen: $showingEditScreen, locations: $locations)
             } else {
                 Button("Unlock Places") {
                     self.authenticate()
